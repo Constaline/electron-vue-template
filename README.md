@@ -60,3 +60,12 @@ xcode-select --install
 3.执行 `npm install` 命令安装依赖
 
 <br/>
+
+## VSCode 调试主进程方法
+
+1.在主进程代码(`src/main`)中加入断点。
+
+2.在 VSCode 里面，点击“调试”图标。选择`Electron_Main`配置，点击“调试并运行”
+
+<br/>
+

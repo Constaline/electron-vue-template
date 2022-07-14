@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Electron_Main",
+            "program": "${workspaceFolder}/.electron-vue/dev-runner.js",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "autoAttachChildProcesses": true
+        }
+    ]
+}
