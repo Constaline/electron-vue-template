@@ -8,7 +8,9 @@ let baseConfig = {
         "output": "build"
     },
     "files": [
-        "dist/electron/**/*"
+        "dist/electron/**/*",
+        // 此处添加 README.md 用于 asarmor 中损毁文件
+        "README.md",
     ],
     "publish": [
         {
@@ -17,5 +19,12 @@ let baseConfig = {
         }
     ]
 }
+
+// 注册钩子
+let hooks = {
+    "afterPack": "builder_config/hooks/afterPack.js",
+}
+  
+baseConfig = Object.assign(baseConfig, hooks)
 
 module.exports = baseConfig
