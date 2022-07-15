@@ -4,6 +4,9 @@ let baseConfig = {
     "productName": `${name}`,
     "appId": `com.${author}.electronvue`,
     "npmRebuild": false,
+    "asarUnpack": [
+        "**/*.jsc"
+    ],
     "directories": {
         "output": "build"
     },

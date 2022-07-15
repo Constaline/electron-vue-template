@@ -19,6 +19,8 @@ npm run build:win_update
 npm run build:mac
 ```
 
+> 源码编译后会生成main.jsc文件，.jsc文件必须与用于编译它的相同Node.js版本一起运行（必须是相同的架构）。因此各系统编译生成的.jsc只能在当前系统使用。
+
 <br/>
 
 ## 安装依赖注意事项
