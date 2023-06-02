@@ -19,6 +19,9 @@ function createWindow () {
       // Electron升级到5.0以上之后，在创建窗口的时候需要手动开启node集成
       nodeIntegration: true,
       nodeIntegrationInWorker: true,
+      // electron 12.x版本以上，需要设置contextIsolation为false，
+      // 以便renderer进程使用require/process
+      contextIsolation: false,
     }
   })
 

@@ -25,4 +25,10 @@ app.commandLine.appendSwitch('disable-site-isolation-trials')
 // 增加最大内存占用量
 app.commandLine.appendSwitch('js-flags', '--max-old-space-size=2048');
 
+/**
+ * 注册@electron/remote模块
+ * https://github.com/electron/remote 
+ */
+require('@electron/remote/main').initialize();
+
 require('./app');
