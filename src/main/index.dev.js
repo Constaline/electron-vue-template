@@ -11,13 +11,15 @@
 require('electron-debug')({ showDevTools: true })
 
 // Install `vue-devtools`
-require('electron').app.on('ready', () => {
-    // TODO: 
-    // electron13版本以上废弃了BrowserWindow.addDevToolsExtension方法，需要重写注入
-
-    // require('electron').BrowserWindow.addDevToolsExtension(
-    //     require('path').join(__static, 'vue_devtools')
-    // )
+const { app, session } = require('electron');
+const path = require('path');
+app.on('ready', async () => {
+    let vueDevtoolsPath = path.join(__static, 'vue_devtools');
+    await session.defaultSession.loadExtension(
+        vueDevtoolsPath,
+        // allowFileAccess 是在 file://URL 上加载devtools扩展所需的配置。
+        { allowFileAccess: true }
+    )
 })
 
 // Require `main` process to boot app
